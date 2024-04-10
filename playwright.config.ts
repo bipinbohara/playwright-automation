@@ -41,6 +41,13 @@ export default defineConfig({
       name: 'chromium',
       use: { //...devices['Desktop Chrome']
         viewport: null,
+        headless: false,
+        screenshot: 'on',
+        video: 'on',
+        launchOptions: {
+            // args: ["--headless","--no-sandbox","--use-angle=gl"]
+            args: ["--no-sandbox", "--start-maximized"]
+        }
       },
       fullyParallel: true,
     },
