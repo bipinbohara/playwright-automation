@@ -12,13 +12,13 @@ const readFile = (filePath: string): Record<string, Credential> => {
     return JSON.parse(rawData);
 };
 
-// Function to Encrypt Password
-function encryptPasswords(value: string, encryption_key: string): string{
+// Function to Encrypt Data
+function encryptData(value: string, encryption_key: string): string{
     return CryptoJS.AES.encrypt(value, encryption_key).toString();
 }
 
-// Function to Decrypt Password
-function decryptPasswords(value: string, encryption_key: string): string {
+// Function to Decrypt Data
+function decryptData(value: string, encryption_key: string): string {
     const bytes = CryptoJS.AES.decrypt(value, encryption_key);
     return bytes.toString(CryptoJS.enc.Utf8);
 }
@@ -33,7 +33,11 @@ const encryptCredentials = (filePath: string, encryption_key: string): void => {
     // Update passwords by encrypting them
     allCredentialKeys.forEach(key => {
         if (credentials.hasOwnProperty(key)) {
-            const encryptedPassword = encryptPasswords(credentials[key].Password, encryption_key);
+            //Username
+            const encryptedUsername = encryptData(credentials[key].Username, encryption_key);
+            credentials[key].Username = encryptedUsername;
+            //Password
+            const encryptedPassword = encryptData(credentials[key].Password, encryption_key);
             credentials[key].Password = encryptedPassword;
         }
     });
@@ -53,7 +57,11 @@ const decryptCredentials = (filePath: string, encryption_key: string): void => {
     // Update passwords by decrypting them
     allCredentialKeys.forEach(key => {
         if (credentials.hasOwnProperty(key)) {
-            const decryptedPassword = decryptPasswords(credentials[key].Password, encryption_key);
+            //Username
+            const encryptedUsername = decryptData(credentials[key].Username, encryption_key);
+            credentials[key].Username = encryptedUsername;
+            //Password
+            const decryptedPassword = decryptData(credentials[key].Password, encryption_key);
             credentials[key].Password = decryptedPassword;
         }
     });
