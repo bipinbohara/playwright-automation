@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Credentials IsEncrypted="true">
+    <Parameters>
+      <Param Name="AdminUserName">sstha</Param>
+      <Param Name="AdminUserPassword">Nepal@123</Param>
+    </Parameters>
+  </Credentials>
+  <TestSuite>
+    <TestMethod Name="XYZ">
+      <Parameters>
+        <Param Name="XYZ1">XYZ contents</Param>
+      </Parameters>
+    </TestMethod>
+
+    <TestMethod Name="ABCD">
+      <Parameters>
+        <Param Name="ABCD1">ABCD contents</Param>
+        <Param Name="ABCD2">2nd ABCD contents</Param>
+      </Parameters>
+    </TestMethod>
+
+  </TestSuite>
+</Tests>
