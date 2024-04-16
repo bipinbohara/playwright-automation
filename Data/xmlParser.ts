@@ -5,13 +5,13 @@ interface Sitemap {
     Tests: {
     TestSuite: {
         TestMethod: {
-        Name: string; // Use '@_Name' to access attribute 'Name'
-        Parameters: {
-            Param: {
-            Name: string; // Use '@_Name' to access attribute 'Name'
-            '#text': string; // Use '#text' to access element's text content
-            }[];
-        };
+            Name: string; // Use 'Name' to access attribute 'Name'
+            Parameters: {
+                Param: {
+                Name: string; // Use 'Name' to access attribute 'Name'
+                '#text': string; // Use '#text' to access element's text content
+                }[];
+            };
         }[];
     };
     };
@@ -30,19 +30,19 @@ export function getParameterList(methodName: string, filepath: string="data.xml"
     const method = sitemap.Tests.TestSuite.TestMethod.find(method => method.Name === methodName);
 
     if (method) {
-    if (method.Parameters.Param) {
-        const params = Array.isArray(method.Parameters.Param)
-        ? method.Parameters.Param
-        : [method.Parameters.Param];
+        if (method.Parameters.Param) {
+            const params = Array.isArray(method.Parameters.Param)
+            ? method.Parameters.Param
+            : [method.Parameters.Param];
 
-        params.forEach(param => {
-        const key = param.Name;
-        const value = param['#text'];
-        paramList[key] = value;
-        });
-    }
+            params.forEach(param => {
+                const key = param.Name;
+                const value = param['#text'];
+                paramList[key] = value;
+            });
+        }
     } else {
-    console.log(`Test Method "${methodName}" not found.`);
+        console.log(`Test Method "${methodName}" not found.`);
     }
 
     return paramList;
