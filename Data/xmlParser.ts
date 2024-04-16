@@ -3,21 +3,21 @@ import { XMLParser } from 'fast-xml-parser';
 
 interface Sitemap {
     Tests: {
-    TestSuite: {
-        TestMethod: {
-            Name: string; // Use 'Name' to access attribute 'Name'
-            Parameters: {
-                Param: {
+        TestSuite: {
+            TestMethod: {
                 Name: string; // Use 'Name' to access attribute 'Name'
-                '#text': string; // Use '#text' to access element's text content
-                }[];
-            };
-        }[];
-    };
+                Parameters: {
+                    Param: {
+                        Name: string; // Use 'Name' to access attribute 'Name'
+                        '#text': string; // Use '#text' to access element's text content
+                    }[];
+                };
+            }[];
+        };
     };
 }
 
-// Usage example:
+// Set filePath:
 const filePath = 'data.xml';
 
 // Define a function to retrieve parameter list for a specific method
