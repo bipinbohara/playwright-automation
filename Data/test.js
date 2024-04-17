@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var xmlParser_1 = require("./xmlParser");
+var paramList = (0, xmlParser_1.getParameterList)(".Chart", "XYZ");
+console.log("PARAM: " + paramList["XYZ1"]);
+console.log("PARAM: " + paramList["ABCD1"]);
+console.log("PARAM: " + paramList["ABCD2"]);
+var paramList2 = (0, xmlParser_1.getParameterList)(".Provider", "ABCD");
+console.log("PARAM: " + paramList2["ABCD1"]);
+console.log("PARAM: " + paramList2["ABCD2"]);
+console.log("PARAM: " + paramList2["XYZ1"]);

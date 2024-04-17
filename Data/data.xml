@@ -6,19 +6,20 @@
       <Param Name="AdminUserPassword">Nepal@123</Param>
     </Parameters>
   </Credentials>
-  <TestSuite>
+  <TestSuite Name=".Chart">
     <TestMethod Name="XYZ">
       <Parameters>
         <Param Name="XYZ1">XYZ contents</Param>
       </Parameters>
     </TestMethod>
+  </TestSuite>
 
+  <TestSuite Name=".Provider">
     <TestMethod Name="ABCD">
       <Parameters>
         <Param Name="ABCD1">ABCD contents</Param>
         <Param Name="ABCD2">2nd ABCD contents</Param>
       </Parameters>
     </TestMethod>
-
   </TestSuite>
 </Tests>
