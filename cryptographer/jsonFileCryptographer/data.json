@@ -1,5 +1,14 @@
 {
-"Credential1": {"Username": "sstha", "Password": "Nepal@123"},
-"Credential2": {"Username": "admin", "Password": "admin@123"},
-"Credential3": {"Username": "guestUser", "Password": "guest@123"}
+    "Credential1": {
+        "Username": "sstha",
+        "Password": "Nepal@123"
+    },
+    "Credential2": {
+        "Username": "admin",
+        "Password": "admin@123"
+    },
+    "Credential3": {
+        "Username": "guestUser",
+        "Password": "guest@123"
+    }
 }
